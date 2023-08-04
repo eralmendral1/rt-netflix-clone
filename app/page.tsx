@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import Navbar from './components/Navbar'
+import Billboard from './components/Billboard'
 
 const Home = async () => {
     const session = await getServerSession(authOptions)
@@ -15,32 +16,7 @@ const Home = async () => {
     return (
         <div>
             <Navbar />
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>   <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>   <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
-            <div className="h-96"></div>
+            <Billboard />
         </div>
     )
 }
