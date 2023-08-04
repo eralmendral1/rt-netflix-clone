@@ -16,7 +16,7 @@ const ProfilePage = async () => {
 
                 <div className='flex items-center justify-center gap-8 mt-10'>
                     <ProfileCard>
-                    <div className="group flex-row w-44 mx-auto">
+                        <div className="group flex-row w-44 mx-auto">
                             <div className="
                                 w-44 h-44 rounded-md 
                                 flex items-center justify-center 
@@ -32,7 +32,7 @@ const ProfilePage = async () => {
                                 <UserName />
                             </div>
                         </div>
-                        </ProfileCard>
+                    </ProfileCard>
                 </div>
             </div>
         </div>

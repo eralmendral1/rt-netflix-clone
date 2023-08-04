@@ -3,8 +3,7 @@ import React from 'react'
 import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
-import SignOutButton from './components/SignOutButton'
-import UserInfo from './components/UserInfo'
+import Navbar from './components/Navbar'
 
 const Home = async () => {
     const session = await getServerSession(authOptions)
@@ -14,10 +13,34 @@ const Home = async () => {
     }
 
     return (
-        <div className='text-2xl text-green-500'>
-            <h1>Netflix</h1>
-            <UserInfo />
-            <SignOutButton />
+        <div>
+            <Navbar />
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>   <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>   <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
+            <div className="h-96"></div>
         </div>
     )
 }
