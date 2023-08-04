@@ -77,7 +77,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > TOP_OFFSET) {
+            if (window.scrollY > TOP_OFFSET) {
                 setShowBackground(true)
             } else {
                 setShowBackground(false)
@@ -90,12 +90,11 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll)
         }
 
-    },[setShowBackground])
+    }, [setShowBackground])
 
     return (
         <nav className="w-full fixed z-40">
             <div className={`
-           
            ${showBackground ? 'bg-zinc-800 bg-opacity-90' : ''}
             px-4 md:px-16 py-6
             flex flex-row items-center 
