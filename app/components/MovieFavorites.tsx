@@ -1,17 +1,17 @@
 'use client'
 
 import React from 'react'
-import useMovieList from '../hooks/useMovieList'
 import { isEmpty } from 'lodash'
 import MovieCard from './MovieCard'
+import useFavorites from '../hooks/useFavorites'
 
-type MovieListProps = {
+type MovieFavoritesProps = {
     title: string,
 }
 
-const MovieList: React.FC<MovieListProps> = ({ title }) => {
+const MovieFavorites: React.FC<MovieFavoritesProps> = ({ title }) => {
 
-    let { data } = useMovieList()
+    let { data } = useFavorites()
 
     if (isEmpty(data)) return null
 
@@ -31,4 +31,4 @@ const MovieList: React.FC<MovieListProps> = ({ title }) => {
     )
 }
 
-export default MovieList
+export default MovieFavorites
