@@ -6,10 +6,12 @@ import { isEmpty } from 'lodash'
 import { useRouter } from 'next/navigation'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { PlayIcon } from '@heroicons/react/24/solid'
+import FavoriteButton from './FavoriteButton'
+import useFavorites from '../hooks/useFavorites'
 
 type MovieListProps = {
-
-    title: string
+    title: string,
+    type ?: string
 }
 
 type MovieCardProps = {
@@ -80,7 +82,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                         <div onClick={redirectToWatch} className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition hover:bg-neutral-300">
                             <PlayIcon className="text-black w-4 lg:w-6" />
                         </div>
-                        {/* <FavoriteButton movieId={data.id} /> */}
+                        <FavoriteButton movieId={data.id} />
                         <div onClick={() => { }} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
                             <ChevronDownIcon className="text-white group-hover/item:text-neutral-300 w-4 lg:w-6" />
                         </div>
@@ -100,9 +102,16 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
     )
 }
 
-
-const MovieList: React.FC<MovieListProps> = ({ title }) => {
-    const { data } = useMovieList()
+const MovieList: React.FC<MovieListProps> = ({ title ,type}) => {
+    let data = []
+    
+    if(type === 'favorites') {
+        let { data: favs } = useFavorites()
+        data = favs
+    } else {
+        let { data: movies } = useMovieList()
+        data = movies
+    }
 
     if (isEmpty(data)) return null
 

@@ -19,9 +19,10 @@ const Home = async () => {
             <Navbar />
             <Billboard />
 
-          
+            <div className="pb-40">
                 <MovieList title="Trending Now" />
-         
+                <MovieList title="My List" type="favorites" />
+            </div>
         </div>
     )
 }
