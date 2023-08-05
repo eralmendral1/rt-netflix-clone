@@ -1,7 +1,6 @@
 import { without } from 'lodash'
 import prismadb from '@/lib/prismadb'
 import serverAuth from '@/lib/serverAuth'
-import { NextApiRequest, NextApiResponse } from 'next'
 import { NextResponse } from 'next/server'
 
 export async function GET() {

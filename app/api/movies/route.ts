@@ -1,9 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import prismadb from '@/lib/prismadb'
 import serverAuth from '@/lib/serverAuth'
 import { NextResponse } from 'next/server'
 
-export async function GET(request: NextApiRequest, response: NextApiResponse) {
+export async function GET() {
     try {   
         await serverAuth()
         const movies = await prismadb.movie.findMany()
