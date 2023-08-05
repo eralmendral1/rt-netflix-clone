@@ -2,12 +2,12 @@ import React from 'react'
 
 import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
-import { authOptions } from './api/auth/[...nextauth]/route'
 import Navbar from './components/Navbar'
 import Billboard from './components/Billboard'
 import MovieList from './components/MovieList'
 import InfoModal from './components/InfoModal'
 import MovieFavorites from './components/MovieFavorites'
+import { authOptions } from '../lib/authOptions'
 
 const Home = async () => {
     const session = await getServerSession(authOptions)
@@ -29,3 +29,5 @@ const Home = async () => {
 }
 
 export default Home
+
+export const dynamic = "force-dynamic"

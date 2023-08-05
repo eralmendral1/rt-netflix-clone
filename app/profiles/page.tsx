@@ -1,9 +1,9 @@
 import { getServerSession } from 'next-auth'
 import React from 'react'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { redirect } from 'next/navigation'
 import UserName from '../components/UserName'
 import ProfileCard from '../components/ProfileCard'
+import { authOptions } from '@/lib/authOptions'
 
 const ProfilePage = async () => {
     const session = getServerSession(authOptions)
@@ -40,3 +40,5 @@ const ProfilePage = async () => {
 }
 
 export default ProfilePage
+
+export const dynamic = "force-dynamic"

@@ -20,3 +20,5 @@ export async function GET(request: Request, { params }: { params: { id: string }
         throw new Error("Problem encountered getting movie.")
     }
 }
+
+export const dynamic = "force-dynamic"

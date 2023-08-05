@@ -11,3 +11,5 @@ export async function GET() {
         return NextResponse.json('User not found', { status: 400})
     }
 }
+
+export const dynamic = "force-dynamic"

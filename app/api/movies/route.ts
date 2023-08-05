@@ -12,3 +12,4 @@ export async function GET() {
         throw new Error("Error encountered getting movies.")
     }
 }
+export const dynamic = 'force-dynamic'

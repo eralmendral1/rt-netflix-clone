@@ -24,8 +24,10 @@ export async function GET() {
 export async function POST(request: Request) {
     try {
         const { currentUser } = await serverAuth()
+
+   
         const { movieId } = await request.json()
-        console.log("🚀 ~ file: route.ts:29 ~ POST ~ movieId:", movieId)
+      
         const movie = await prismadb.movie.findUnique({ where: { id: movieId } })
         if (!movie) throw new Error("Movie not found")
 
@@ -48,6 +50,7 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
     try {
         const { currentUser } = await serverAuth()
+
         const { movieId } = await request.json()
         const movie = await prismadb.movie.findUnique({ where: { id: movieId } })
         if (!movie) throw new Error("Movie not found.")
@@ -66,3 +69,4 @@ export async function DELETE(request: Request) {
     }
 }
 
+export const dynamic = "force-dynamic"

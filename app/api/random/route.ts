@@ -15,7 +15,10 @@ export async function GET() {
         })
 
         return NextResponse.json(randomMovies[0], { status: 200 })
-    }catch(error) {     
+    } catch (error) {
         console.error(error)
+        throw new Error("Error encounted getting random movie")
     }
 }
+
+export const dynamic = 'force-dynamic'
