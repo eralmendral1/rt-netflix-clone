@@ -6,6 +6,7 @@ import { authOptions } from './api/auth/[...nextauth]/route'
 import Navbar from './components/Navbar'
 import Billboard from './components/Billboard'
 import MovieList from './components/MovieList'
+import InfoModal from './components/InfoModal'
 
 const Home = async () => {
     const session = await getServerSession(authOptions)
@@ -16,6 +17,7 @@ const Home = async () => {
 
     return (
         <div>
+            <InfoModal/>
             <Navbar />
             <Billboard />
 
